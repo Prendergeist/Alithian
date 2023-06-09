@@ -1,0 +1,27 @@
+server:
+  port: 8892
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath*:mapper/*.xml
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    password: YEXUSHIwo?
+    username: root
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/cha2atest?characterEncoding=utf-8&useSSL=false
+  servlet:
+    multipart:
+      max-request-size: 50MB
+      max-file-size: 50MB
+  application:
+    name: app
+  redis:
+    database: 0
+  jackson:
+    deserialization:
+      FAIL_ON_UNKNOWN_PROPERTIES: false
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+filepath: J:\wechat\WeChat Files\goushilishiwoer\FileStorage\File\2023-05\530810593243d1f48e18d64f1358a499\Aleethea-main\alithian_backend\alithian\src\main\resources\filetemp\

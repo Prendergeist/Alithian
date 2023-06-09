@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.alithian.app.mapper.AlithianCommentMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.alithian.app.model.AlithianComment">
+        <result column="id" property="id"/>
+        <result column="art_id" property="artId"/>
+        <result column="context" property="context"/>
+        <result column="uid" property="uid"/>
+        <result column="time" property="time"/>
+    </resultMap>
+    <select id="getListByArtId" resultType="com.alithian.app.model.AlithianComment">
+        select * from tb_comment where  art_id=#{id}
+    </select>
+</mapper>
