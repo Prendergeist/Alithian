@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Alithian - Login</title>
+    <link href="images/hd-logo.png" rel="icon">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    
+    <header class="header">
+      <div class="hdK flexC">
+        <nav class="nav">
+          <ul class="flexC">
+            <li><a href="/" class="menuA active">Home</a></li>  
+            <li><a href="/news" class="menuA">News</a></li>
+            <li><a href="/podcast" class="menuA">Podcast</a></li>
+            <li><a href="/write-for-us" class="menuA">Write for us</a></li>                            
+          </ul>
+        </nav>
+        <h1 class="hd-logo"><a href="/"><img src="images/hd-logo.png"></a></h1>
+        <nav class="nav mrL">
+          <ul class="flexC">
+            <li><a href="/community" class="menuA">Community</a></li>                       
+            <li><a href="/shop" class="menuA">Shop</a></li>
+            <li><a href="/register" class="menuA">Join</a></li>
+            <li><a href="/login" class="logA">Sign in</a></li>                            
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <form action="/login" method="post">
+        <h2>Login</h2>
+        <br>
+          <label for="email">Email:</label>
+          <input type="email" id="email-input" name="email" placeholder="Enter your email" required autofocus>
+          <label for="password">Password:</label>
+          <input type="password" id="password-input" name="password" placeholder="Enter your password" required>
+        <input type="submit" value="Login">
+        <br>
+        <span style="color:red" th:text="${message}" />
+        <span style="color:red" th:text="${error}" />
+        <br>
+        <img src="images/istockphoto-1145046836-612x612.jpg" alt="Example Image">
+      </form>
+    </div>
+    
+
+    <footer class="footer">
+      <div class="ftK flexC fl-bet">
+        <div class="ft-l flexC">
+          <a href="index.html" class="ft-logo"><img src="images/hd-logo.png"></a>
+          <div class="ft-l-nav">
+            <a href="/about_us" class="ft-nav-a">About us</a>
+					  <a href="javascript:;" class="ft-nav-a">Join Us</a>
+					  <a href="javascript:;" class="ft-nav-a">Contact Us</a>
+          </div>
+        </div>
+        <div class="copy">© Copyright 2023 <span>Terms of Use | Privacy Policy</span></div>
+        <div class="links flexC">
+          <a href="javascript:;" class="flexC"><img src="images/link01.png"></a>
+          <a href="javascript:;" class="flexC"><img src="images/link02.png"></a>
+          <a href="javascript:;" class="flexC"><img src="images/link03.png"></a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>

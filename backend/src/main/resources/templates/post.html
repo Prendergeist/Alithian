@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>publish blog</title>
+	<link rel="stylesheet" type="text/css" href="../css/post.css">
+	<link rel="stylesheet" type="text/css" href="/POST/10-footer.css">
+	<link rel="stylesheet" type="text/css" href="/font/iconfont.css">
+</head>
+<body>
+	<header>
+		<h1>MyBlog</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Category</a></li>
+				<li><a href="#">About us</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<form>
+			<label for="title">Tile:</label>
+			<input type="text" id="title" name="title" required>
+
+			<label for="content">Content:</label>
+			<textarea id="content" name="content" required class="textarea-height"></textarea>
+
+			<label for="tags">tag:</label>
+			<input type="text" id="tags" name="tags">
+
+			<label for="type">type of blog</label>
+			<select id="type" name="type" required>
+				<option value="original">original</option>
+				<option value="repost">repost</option>
+				<option value="translate">translate</option>
+			</select>
+
+			<label for="visibility">visibility:</label>
+			<select id="visibility" name="visibility" required>
+				<option value="all">all</option>
+				<option value="members">only members</option>
+			</select>
+
+			<label for="image">add image</label>
+			<input type="file" id="image" name="image">
+
+			<label for="video">add video</label>
+			<input type="file" id="video" name="video">
+
+			<div class="buttons">
+				<button type="submit">save as draft</button>
+				<button type="submit">set a time</button>
+				<button type="submit" onclick="submitNews()">publish</button>
+			</div>
+		</form>
+	</main>
+
+	<footer>
+		<p>&copy; 2023 My Blog</p>
+
+	</footer>
+	<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		function submitNews() {
+			var title = $("#title").val();
+			var content = $("#content").val();
+			$.ajax({
+				type: "POST",
+				url: "/api/news",
+				contentType: "application/json;charset=utf-8",
+				data: JSON.stringify({
+					title: title, content: content}),
+				success: function(data) {
+					alert("success！");
+				},
+				error: function(xhr, status, error) {
+					alert("error info" + error);
+				}
+			});
+		}
+	</script>
+</body>
+</html>
